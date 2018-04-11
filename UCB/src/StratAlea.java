@@ -8,7 +8,7 @@ public class StratAlea {
 		
 		for(int i =0; i< nbIteration;i++){
 			int indiceAuHasard = (int) (Math.random() * (manchot.size() - 1));
-			this.nbGain = manchot.get(indiceAuHasard).tirerBras();
+			this.nbGain += manchot.get(indiceAuHasard).tirerBras();
 		}
 		return this.nbGain;
 	}

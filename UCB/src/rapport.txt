@@ -1,0 +1,7 @@
+7)
+
+plus k est grand plus il vas explorer et lorsqu'il est faible on vas exploiter plus qu'explorer (avec un peu de changement de machines).
+
+la stratégie gloutonne est meilleure quand k de ucb est grand (200000) (reviens a explorer par ucb).
+
+la stratégie ucb est meilleure quand k est petit (test avec k = 2, 15) car l'exploitation de la stratégie gloutonne va etre perdante face au mixte entre exploration et exploitation de l'ucb.

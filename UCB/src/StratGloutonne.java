@@ -5,12 +5,21 @@ public class StratGloutonne {
 	private double nbGain;
 	
 	
-public double rechercheAlea(int nbIteration, ArrayList<Manchot> manchot) {
-		
-		for(int i =0; i< nbIteration;i++){
-			int indiceAuHasard = (int) (Math.random() * (manchot.size() - 1));
-			this.nbGain = manchot.get(indiceAuHasard).tirerBras();
+public double rechercheGloutonne(int nbIteration, ArrayList<Manchot> manchot) {
+		int indiceBestBra = 0;
+		for(int i =0; i< manchot.size();i++){
+			int bestBra = 0;
+			if (manchot.get(i).tirerBras() > bestBra){
+				bestBra =i;
+			}
+			
+			indiceBestBra = bestBra;
 		}
+		
+		for(int j = 0; j<nbIteration;j++){
+			this.nbGain += manchot.get(indiceBestBra).tirerBras();
+		}
+		
 		return this.nbGain;
 	}
 

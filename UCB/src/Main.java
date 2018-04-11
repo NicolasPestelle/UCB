@@ -4,13 +4,25 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<Manchot> manchot = creerManchot(10);
+		ArrayList<Manchot> manchot = creerManchot(150);
 		
-		/*StratAlea rand = new StratAlea();
+
 		
-		System.out.println(rand.rechercheAlea(10, manchot));*/
+		StratUcb ucb = new StratUcb();
 		
-		/*UCB : GAIN + SQRT(?*LOG(NBDEFOISJOUER)/NBDEFOISJOUERSURLAMACHINE)*/
+		System.out.println("résultat de ucb : " + ucb.rechercheUcb(15000, manchot,20));
+		
+		StratAlea rand = new StratAlea();
+		
+		System.out.println("résultat de l'aléatoire : "+rand.rechercheAlea(15000, manchot));
+		
+		
+		StratGloutonne glouton = new StratGloutonne();
+		
+		System.out.println("résultat de glouton : "+glouton.rechercheGloutonne(15000, manchot));
+		
+		
+
 	}
 	
 	public static ArrayList<Manchot> creerManchot(int nb){
